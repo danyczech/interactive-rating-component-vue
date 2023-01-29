@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <title>Frontend Mentor | Interactive rating component</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <!-- card is a Vue instance-->
+    <main id="card">
+      <!-- Rating state start -->
+      <section v-if="rate===0" class="card__container rating">
+        <div class="rating__icon">
+          <img src="./images/icon-star.svg" alt="star image" />
+        </div>
+        <h1 class="rating__title">How did we do?</h1>
+        <p class="rating__description">
+          Please let us know how we did with your support request. All feedback
+          is appreciated to help us improve our offering!
+        </p>
+        <div class="rating__all">
+          <span
+            v-for="num in 5"
+            :key="num"
+            :class="{checked: (givenRate===num)}"
+            @click="setRate(num)"
+            >{{ num }}</span
+          >
+        </div>
+        <button @click="submitRating" class="rating__btn">Submit</button>
+      </section>
+      <!-- Rating state end -->
+
+      <!-- Thank you state start -->
+      <section v-else class="card__container thank">
+        <div class="thank__icon">
+          <img src="./images/illustration-thank-you.svg" alt="thank you" />
+        </div>
+        <p class="thank__selection">You selected {{ rate }} out of 5</p>
+        <h1 class="thank__title">Thank you!</h1>
+        <p class="thank__description">
+          We appreciate you taking the time to give a rating. If you ever need
+          more support, don’t hesitate to get in touch!
+        </p>
+      </section>
+      <!-- Thank you state end -->
+    </main>
+    <!-- end of the Vue instance-->
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+        Frontend Mentor</a
+      >. Coded by <a href="https://github.com/danyczech"> Danyczech</a>.
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>
