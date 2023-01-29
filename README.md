@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://danyczech.github.io/interactive-rating-component/](https://danyczech.github.io/interactive-rating-component/)
+- Solution URL: [https://danyczech.github.io/interactive-rating-component-vue/](https://danyczech.github.io/interactive-rating-component-vue/)
 
 ## My process
 
@@ -44,40 +44,11 @@ Users should be able to:
 - Flexbox
 - Sass
 - Mobile-first workflow
-- Vanilla JavaScript
+- VueJS 3
 
 ### What I learned
 
-The JavaScript part was quite short at the end. One simple if statement gives only one rating at the end.
-
-```js
-rating_points.forEach((point) => {
-  point.addEventListener("click", (e) => {
-    //every time a point is clicked, this checks if something else was selected before and if yes, then it removes it from checked
-    const active = document.querySelector(".checked");
-    if (active) active.classList.remove("checked");
-    //puts the checked class on the clicked number & stores the value in rate
-    e.target.classList.add("checked");
-    rate = e.target.textContent;
-  });
-});
-```
-
-To center everything it seems to be good to use flex display + align-items & justify-content with the value center.
-
-```css
-span {
-  background-color: $neutral-dark-secondary;
-  color: $neutral-light;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-```
+I rewrited the code from Vanilla Javascript to Vue3. It is very simple to maintain the interactivity of this component with Vue framework. Vanilla JS version is there: https://github.com/danyczech/interactive-rating-component
 
 ### Continued development
 
